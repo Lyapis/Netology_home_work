@@ -3,8 +3,8 @@ import pprint
 
 
 def cook_book_input():
-    with open("recipe.yml") as fin:
-        cook_book = yaml.load(fin)
+    with open("menu_recepture.yml") as func:
+        cook_book = yaml.load(func)
     return cook_book
 
 
@@ -28,9 +28,7 @@ def create_shop_list():
         split(', ')
     shop_list = get_shop_list_by_dishes(dishes, person_count)
     pprint.pprint(shop_list)
-    with open('recipe_final.yml', 'w') as f:
+    with open('result.yml', 'w') as f:
         yaml.dump(shop_list, f, allow_unicode=True)
-    print('---------------')
-    print('Так же данные были переданы в файл - recipe_final.yml')
-
+        
 create_shop_list()
